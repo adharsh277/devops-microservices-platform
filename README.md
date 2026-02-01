@@ -5,3 +5,9 @@ Built a production-grade cloud-native microservices platform using Kubernetes, f
 
 - Linux command basics completed
 - Git commit and branch workflow verified
+
+## Phase 1 progeress
+
+- Created all API using fast API
+- Set Notfication set up
+## phase 2 - Dockerisation
