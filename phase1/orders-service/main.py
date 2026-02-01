@@ -2,8 +2,9 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 import uuid
+import requests
 
-app = FastAPI()
+app = FastAPI()   # 👈 THIS MUST COME BEFORE @app decorators
 
 # In-memory order store
 orders = []
@@ -33,3 +34,28 @@ def create_order(order: Order):
 @app.get("/orders", response_model=List[OrderResponse])
 def list_orders():
     return orders
+
+# 🔽 NEW ENDPOINT (added in Day 4)
+@app.post("/orders-with-payment")
+def create_order_with_payment(order: Order):
+    order_id = str(uuid.uuid4())
+
+    order_data = {
+        "id": order_id,
+        "item": order.item,
+        "quantity": order.quantity
+    }
+    orders.append(order_data)
+
+    payment_response = requests.post(
+        "http://localhost:8003/pay",
+        json={
+            "order_id": order_id,
+            "amount": 1000
+        }
+    )
+
+    return {
+        "order": order_data,
+        "payment": payment_response.json()
+    }
