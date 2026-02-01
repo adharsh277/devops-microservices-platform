@@ -1,10 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, BackgroundTasks
 from pydantic import BaseModel
 from typing import List
 import uuid
 import requests
 
-app = FastAPI()   # 👈 THIS MUST COME BEFORE @app decorators
+app = FastAPI()
 
 # In-memory order store
 orders = []
@@ -35,9 +35,18 @@ def create_order(order: Order):
 def list_orders():
     return orders
 
-# 🔽 NEW ENDPOINT (added in Day 4)
+
+# 🔔 Background task helper (NEW for Day 5)
+def send_notification(message: str):
+    requests.post(
+        "http://localhost:8004/notify",
+        json={"message": message}
+    )
+
+
+# 🔽 UPDATED endpoint (Day 5 version)
 @app.post("/orders-with-payment")
-def create_order_with_payment(order: Order):
+def create_order_with_payment(order: Order, background_tasks: BackgroundTasks):
     order_id = str(uuid.uuid4())
 
     order_data = {
@@ -55,7 +64,14 @@ def create_order_with_payment(order: Order):
         }
     )
 
+    # 🔥 async background task
+    background_tasks.add_task(
+        send_notification,
+        f"Order {order_id} processed with payment status {payment_response.json().get('status')}"
+    )
+
     return {
         "order": order_data,
-        "payment": payment_response.json()
+        "payment": payment_response.json(),
+        "notification": "scheduled"
     }
