@@ -39,7 +39,7 @@ def list_orders():
 # 🔔 Background task helper (NEW for Day 5)
 def send_notification(message: str):
     requests.post(
-        "http://localhost:8004/notify",
+        "http://notifications-service:8004/notify",
         json={"message": message}
     )
 
@@ -57,7 +57,7 @@ def create_order_with_payment(order: Order, background_tasks: BackgroundTasks):
     orders.append(order_data)
 
     payment_response = requests.post(
-        "http://localhost:8003/pay",
+        "http://payments-service:8003/pay",
         json={
             "order_id": order_id,
             "amount": 1000
