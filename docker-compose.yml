@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  orders-service:
+    build: ./phase1/orders-service
+    ports:
+      - "8002:8002"
+    depends_on:
+      - payments-service
+      - notifications-service
+
+  payments-service:
+    build: ./phase1/payments-service
+    ports:
+      - "8003:8003"
+
+  notifications-service:
+    build: ./phase1/notifications-service
+    ports:
+      - "8004:8004"
