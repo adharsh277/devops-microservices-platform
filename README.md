@@ -152,12 +152,14 @@ Each service is:
 - One-click deployments
 - Rollback in seconds
 
-**Screenshots**
 ## Screenshots
 
+### GitHub Actions pipeline runs
 ![GitHub Actions pipeline runs](assets/9.png)
 
+### Blue and Green pods running together
 ![Blue and Green pods running together](assets/8.png)
+
 
 ---
 
