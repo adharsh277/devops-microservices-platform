@@ -16,3 +16,6 @@ Built a production-grade cloud-native microservices platform using Kubernetes, f
 - Deployed auth, orders, payments, notifications
 - Images stored in ACR
 - Services verified via /health endpoints
+
+## phase 4 - CICD - GITHUB ACTION
+ - Orders service CI: GitHub Actions builds Docker image and pushes to Azure ACR
