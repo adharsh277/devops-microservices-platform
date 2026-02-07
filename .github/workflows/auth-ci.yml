@@ -29,3 +29,18 @@ jobs:
       - name: Push Docker image
         run: |
           docker push devopsacr30179.azurecr.io/auth-service:${{ github.sha }}
+      # 🔽 CD STARTS HERE (Phase 4 – Day 3)
+      - name: Set AKS context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: devops-rg
+          cluster-name: devops-aks
+
+      - name: Deploy auth-service to AKS
+        run: |
+          kubectl set image deployment/auth-deployment \
+            <AUTH_CONTAINER_NAME>=${{ secrets.ACR_LOGIN_SERVER }}/auth-service:${{ github.sha }} \
+            -n devops
+
+          kubectl rollout status deployment/auth-deployment -n devops
+  
