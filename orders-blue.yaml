@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders-blue
+  namespace: devops
+  labels:
+    app: orders
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orders
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: orders
+        version: blue
+    spec:
+      containers:
+      - name: orders
+        image: devopsacr30179.azurecr.io/orders-service:b07346ba3a2706cd7fbdb9a2698a9983c8499581
+        ports:
+        - containerPort: 8000
