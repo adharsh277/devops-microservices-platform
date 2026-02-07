@@ -1,0 +1,31 @@
+name: Payments Service CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name devopsacr30179
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t devopsacr30179.azurecr.io/payments-service:${{ github.sha }} \
+            ./phase1/payments-service
+
+      - name: Push Docker image
+        run: |
+          docker push devopsacr30179.azurecr.io/payments-service:${{ github.sha }}
