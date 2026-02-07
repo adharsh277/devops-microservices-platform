@@ -257,4 +257,13 @@ Each service is:
 ✅ Project Complete  
 🚀 Production-oriented DevOps platform  
 
-**Author:** Adharsh U
+**Author:** Adharsh U  
+
+## 📄 Research Paper
+
+This research paper was prepared as part of the design and evaluation of this DevOps platform.
+
+**Title:** Blue–Green and Canary Deployments in Cloud-Native DevOps  
+**Format:** PDF  
+[View Research Paper](research/blue-green-canary-devops.pdf)
+
