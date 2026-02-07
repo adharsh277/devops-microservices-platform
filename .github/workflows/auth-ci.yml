@@ -39,7 +39,7 @@ jobs:
       - name: Deploy auth-service to AKS
         run: |
           kubectl set image deployment/auth-deployment \
-            <AUTH_CONTAINER_NAME>=${{ secrets.ACR_LOGIN_SERVER }}/auth-service:${{ github.sha }} \
+            auth=${{ secrets.ACR_LOGIN_SERVER }}/auth-service:${{ github.sha }} \
             -n devops
 
           kubectl rollout status deployment/auth-deployment -n devops
