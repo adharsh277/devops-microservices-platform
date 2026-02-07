@@ -1,6 +1,23 @@
 # 🚀 DevOps Microservices Platform  
 **End-to-End DevOps | Kubernetes | CI/CD | Blue-Green | Observability | Resilience**
 ---
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi)
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue?logo=docker)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-Multi--Container-lightblue?logo=docker)
+
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue?logo=kubernetes)
+![Helm](https://img.shields.io/badge/Helm-Package%20Manager-0F1689?logo=helm)
+
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI%2FCD-2088FF?logo=githubactions)
+![Blue-Green Deployment](https://img.shields.io/badge/Deployment-Blue--Green-brightgreen)
+![Canary Deployment](https://img.shields.io/badge/Deployment-Canary-yellow)
+
+![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-E6522C?logo=prometheus)
+![Grafana](https://img.shields.io/badge/Grafana-Visualization-F46800?logo=grafana)
+
+![k6](https://img.shields.io/badge/k6-Load%20Testing-7D64FF?logo=k6)
 ## 📌 Project Overview
 
 This project demonstrates a **real-world DevOps implementation** for a microservices-based backend platform, focusing on **production readiness**, not just deployment.
