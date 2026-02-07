@@ -71,11 +71,6 @@ Each service is:
 
 **Outcome**
 - Clean, reproducible development environment
-
-**Screenshots**
-[ Add Docker running / Git status screenshots here ]
-
-
 ---
 
 ## 🔵 Phase 1 — Backend Microservices
@@ -93,7 +88,17 @@ Each service is:
 - APIs are independently deployable
 
 **Screenshots**
-[ Swagger UI / API response screenshots here ]
+**Screenshots**
+
+<p align="center">
+  <img src="assets/13.png" width="800"><br>
+  <em>Swagger UI – Service API documentation</em>
+</p>
+
+<p align="center">
+  <img src="assets/14.png" width="800"><br>
+  <em>Sample API response from backend service</em>
+</p>
 
 
 ---
