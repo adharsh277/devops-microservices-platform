@@ -96,13 +96,12 @@ Each service is:
 
 ## Screenshots
 
+### Swagger UI Diagram
 ![Swagger UI Diagram](assets/13.png)
 
+### API UI Response
 ![API UI Response](assets/14.png)
-
-
 ---
-
 ## 🔵 Phase 2 — Dockerization
 
 **Goal:** Application runs identically everywhere
