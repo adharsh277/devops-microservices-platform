@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-blue
+  namespace: devops
+  labels:
+    app: auth
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: auth
+        version: blue
+    spec:
+      containers:
+      - name: auth
+        image: devopsacr30179.azurecr.io/auth-service:c6c39350c627200de5c1a5e911f62e31a6a9a4a0
+        ports:
+        - containerPort: 8000
