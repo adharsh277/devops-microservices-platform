@@ -29,3 +29,17 @@ jobs:
       - name: Push Docker image
         run: |
           docker push devopsacr30179.azurecr.io/payments-service:${{ github.sha }}
+      # CD WOrkflow
+      - name: Set AKS context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: devops-rg
+          cluster-name: devops-aks
+
+      - name: Deploy payments-service to AKS
+        run: |
+          kubectl set image deployment/payments-deployment \
+            payments=${{ secrets.ACR_LOGIN_SERVER }}/payments-service:${{ github.sha }} \
+            -n devops
+
+          kubectl rollout status deployment/payments-deployment -n devops
