@@ -1,6 +1,5 @@
 # 🚀 DevOps Microservices Platform  
 **End-to-End DevOps | Kubernetes | CI/CD | Blue-Green | Observability | Resilience**
-
 ---
 
 ## 📌 Project Overview
