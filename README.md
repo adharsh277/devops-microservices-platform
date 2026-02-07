@@ -90,15 +90,21 @@ Each service is:
 **Screenshots**
 **Screenshots**
 
-<p align="center">
-  <img src="assets/13.png" width="800"><br>
-  <em>Swagger UI – Service API documentation</em>
-</p>
+**Screenshots**
 
-<p align="center">
-  <img src="assets/14.png" width="800"><br>
-  <em>Sample API response from backend service</em>
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/13.png" width="420"><br>
+      <em>Swagger UI – API documentation</em>
+    </td>
+    <td align="center">
+      <img src="assets/14.png" width="420"><br>
+      <em>Sample API response</em>
+    </td>
+  </tr>
+</table>
+
 
 
 ---
