@@ -26,11 +26,7 @@ The project covers:
 - Observability and metrics
 - Load testing and resilience
 - Autoscaling behavior and analysis
-
-> It mirrors how DevOps is actually practiced in real engineering teams.
-
 ---
-
 ## 🧱 Architecture Overview
 
 ## Arc Diagram
