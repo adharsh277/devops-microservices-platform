@@ -1,7 +1,6 @@
 # 🚀 DevOps Microservices Platform  
 **End-to-End DevOps | Kubernetes | CI/CD | Blue-Green | Observability | Resilience**
 ---
-
 ## 📌 Project Overview
 
 This project demonstrates a **real-world DevOps implementation** for a microservices-based backend platform, focusing on **production readiness**, not just deployment.
