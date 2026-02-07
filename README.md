@@ -10,3 +10,9 @@ Built a production-grade cloud-native microservices platform using Kubernetes, f
 - Created all API using fast API
 - Set Notfication set up
 ## phase 2 - Dockerisation
+
+
+## Phase 3 – Kubernetes on AKS
+- Deployed auth, orders, payments, notifications
+- Images stored in ACR
+- Services verified via /health endpoints
