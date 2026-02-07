@@ -95,12 +95,12 @@ Each service is:
 <table>
   <tr>
     <td align="center">
-      <img src="assets/13.png" width="420"><br>
-      <em>Swagger UI – API documentation</em>
+      <img src="assets/13.png" width="720"><br>
+      <em>Sample API response</em>
     </td>
     <td align="center">
-      <img src="assets/14.png" width="420"><br>
-      <em>Sample API response</em>
+      <img src="assets/14.png" width="720"><br>
+      <em> Swagger UI – API documentation</em>
     </td>
   </tr>
 </table>
