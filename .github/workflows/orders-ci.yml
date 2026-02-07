@@ -44,7 +44,7 @@ jobs:
       - name: Deploy orders-service to AKS
         run: |
           kubectl set image deployment/orders-deployment \
-            orders-service=${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }} \
+            orders=${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }} \
             -n devops
 
           kubectl rollout status deployment/orders-deployment -n devops
