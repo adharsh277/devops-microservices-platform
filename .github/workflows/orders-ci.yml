@@ -8,7 +8,7 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +34,7 @@ jobs:
         run: |
           docker push ${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }}
 
-      # 🔽 NEW — CD STARTS HERE (Day 3)
+      # 🔽 CD STARTS HERE (Phase 4 – Day 3)
       - name: Set AKS context
         uses: azure/aks-set-context@v3
         with:
@@ -44,7 +44,7 @@ jobs:
       - name: Deploy orders-service to AKS
         run: |
           kubectl set image deployment/orders-deployment \
-            orders=${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }} \
+            orders-service=${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }} \
             -n devops
 
-          kube
+          kubectl rollout status deployment/orders-deployment -n devops
