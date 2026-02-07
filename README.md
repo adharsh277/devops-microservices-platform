@@ -157,8 +157,8 @@ Each service is:
 ### GitHub Actions pipeline runs
 ![GitHub Actions pipeline runs](assets/9.png)
 
-### Blue and Green pods running together
-![Blue and Green pods running together](assets/8.png)
+### Blue–Green Deployment Traffic Switch
+![Blue–Green Deployment Traffic Switch](assets/8.png)
 
 
 ---
