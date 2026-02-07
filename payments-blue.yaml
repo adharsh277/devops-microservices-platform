@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payments-blue
+  namespace: devops
+  labels:
+    app: payments
+    version: blue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payments
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: payments
+        version: blue
+    spec:
+      containers:
+      - name: payments
+        image: devopsacr30179.azurecr.io/payments-service:4504a64cb14b620761749f11b3439346e62c8c36
+        ports:
+        - containerPort: 8000
