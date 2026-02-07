@@ -177,15 +177,16 @@ Each service is:
 - System behavior measurable
 
 ## Screenshots
+### Grafana dashboards
+![Grafana dashboards](assets/5.png)
 
 ![Grafana dashboards](assets/1.png)
 
-![Grafana dashboards](assets/5.png)
-
+### Prometheus metrics
 ![Prometheus metrics](assets/6.png)
 
 
-▶️ **GitHub Actions CI Pipeline**  
+▶️ **Grafana dashboards Explained**  
 [Watch the video](assets/github.mp4)
 
 ---
