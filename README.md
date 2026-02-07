@@ -23,7 +23,8 @@ The project covers:
 ## 🧱 Architecture Overview
 
 ## Arc Diagram
-![Architecture Diagram](assets/blue green deployment.png)
+![Architecture Diagram](assets/blue-green-deployment.png)
+
 
 
 **Microservices**
