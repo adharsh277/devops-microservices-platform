@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "phase1/orders-service/**"
+      - ".github/workflows/orders-ci.yml"
     branches:
       - main
 
