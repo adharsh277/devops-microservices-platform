@@ -1,358 +1,266 @@
-### DevOps Microservices Platform
+# 🚀 DevOps Microservices Platform  
+**End-to-End DevOps | Kubernetes | CI/CD | Blue-Green | Observability | Resilience**
 
-End-to-End DevOps Implementation: CI/CD, Kubernetes, Blue-Green, Observability & Resilience
+---
 
-📌 Project Overview
+## 📌 Project Overview
 
-This project demonstrates a real-world DevOps workflow for deploying and operating a microservices-based backend platform using Docker, Kubernetes, CI/CD pipelines, Blue-Green deployments, observability, load testing, and autoscaling.
+This project demonstrates a **real-world DevOps implementation** for a microservices-based backend platform, focusing on **production readiness**, not just deployment.
 
-The focus is not just on “making things run”, but on production readiness:
+The project covers:
+- Zero-downtime deployments
+- Safe rollbacks
+- Kubernetes orchestration
+- CI/CD automation
+- Observability and metrics
+- Load testing and resilience
+- Autoscaling behavior and analysis
 
-Zero-downtime deployments
+> It mirrors how DevOps is actually practiced in real engineering teams.
 
-Safe rollbacks
+---
 
-Monitoring and visibility
+## 🧱 Architecture Overview
 
-Resilience under failure and load
+## Arc Diagram
+![Architecture Diagram](assets/blue green deployment.png)
 
-Clear operational trade-offs
 
-⚠️ This is not a tutorial clone.
-This project mirrors how DevOps work is actually done in teams.
+**Microservices**
+- Auth Service  
+- Orders Service  
+- Payments Service  
+- Notifications Service  
 
-🧱 Architecture Overview
+**High-Level Flow**
+## Client
+→ Kubernetes Service
+→ Pod (Blue / Green Deployment)
 
-Services
+Each service is:
+- Independently containerized
+- Deployed via CI/CD
+- Managed by Kubernetes
+- Observable through metrics
 
-Auth Service
+---
 
-Orders Service
+## 🛠 Technology Stack
 
-Payments Service
+- **Backend:** FastAPI (Python)  
+- **Containerization:** Docker  
+- **Orchestration:** Kubernetes (AKS)  
+- **CI/CD:** GitHub Actions  
+- **Deployment Strategy:** Blue-Green  
+- **Monitoring:** Prometheus, Grafana  
+- **Load Testing:** k6  
+- **Autoscaling:** Kubernetes HPA  
 
-Notifications Service
+---
 
-Each service:
+## 🔵 Phase 0 — Environment & Foundations
 
-Runs independently
+**Goal:** Never struggle with setup again
 
-Is containerized
+**What was done**
+- Linux CLI workflow
+- Git branching and commits
+- Python virtual environments
+- Docker fundamentals
 
-Is deployed on Kubernetes
+**Outcome**
+- Clean, reproducible development environment
 
-Is managed via CI/CD
+**Screenshots**
+[ Add Docker running / Git status screenshots here ]
 
-Client
-  ↓
-Service (Kubernetes Service)
-  ↓
-Pod (Blue / Green Deployment)
 
-🛠 Tech Stack
+---
 
-Backend: FastAPI (Python)
+## 🔵 Phase 1 — Backend Microservices
 
-Containerization: Docker
+**Goal:** Understand service behavior and boundaries
 
-Orchestration: Kubernetes (AKS)
+**What was done**
+- Multiple FastAPI services
+- Independent APIs
+- Async request handling
+- Clear service separation
 
-CI/CD: GitHub Actions
+**Outcome**
+- All services respond correctly
+- APIs are independently deployable
 
-Deployment Strategy: Blue-Green
+**Screenshots**
+[ Swagger UI / API response screenshots here ]
 
-Monitoring: Prometheus, Grafana
 
-Load Testing: k6
+---
 
-Autoscaling: Kubernetes HPA
+## 🔵 Phase 2 — Dockerization
 
-## 📘 Phase-Wise Breakdown
-🔵 Phase 0 — Environment & Foundations
+**Goal:** Application runs identically everywhere
 
-Goal: Never struggle with setup again
+**What was done**
+- Dockerfile per service
+- Environment-based configuration
+- Docker Compose for local orchestration
 
-What was done
+**Outcome**
+- Full system starts with a single command
+- Zero manual setup steps
 
-Linux command-line workflow
+**Screenshots**
+[ docker build outputs ]
+[ docker-compose up outputs ]
 
-Git branching & commits
+---
 
-Python virtual environments
+## 🔵 Phase 3 — Kubernetes Core
 
-Docker basics
+**Goal:** Production-grade orchestration
 
-Outcome
+**What was done**
+- Kubernetes Deployments and Services
+- Namespace isolation
+- ConfigMaps and Secrets
+- Declarative infrastructure
 
-Clean dev environment
+**Outcome**
+- All services run inside Kubernetes
+- Fully declarative cluster setup
 
-Reproducible setup
+**Screenshots**
+[ kubectl get pods ]
+[ kubectl get services ]
+[ kubectl get deployments ]
 
-📸 Screenshots
 
-[ Add screenshots of Docker running, git status, project structure ]
+---
 
-🔵 Phase 1 — Backend Microservices
+## 🔵 Phase 4 — CI/CD & Blue-Green Deployment
 
-Goal: Understand application behavior (not framework mastery)
+**Goal:** Zero-downtime deployments
 
-What was done
+**What was done**
+- GitHub Actions CI/CD pipelines
+- Image build and push on commit
+- Automated Kubernetes deployments
+- Blue-Green deployments for all services
+- Instant rollback via service selector switch
 
-Built multiple FastAPI services
+**Why Blue-Green**
+- No downtime
+- Safe releases
+- Fast rollback during incidents
 
-Defined APIs and service boundaries
+**Outcome**
+- One-click deployments
+- Rollback in seconds
 
-Basic async handling
-
-Inter-service communication
-
-Outcome
-
-All services respond correctly
-
-APIs are independently deployable
-
-📸 Screenshots
-
-[ API responses / Swagger UI screenshots ]
-
-🔵 Phase 2 — Dockerization
-
-Goal: App runs identically everywhere
-
-What was done
-
-Dockerfile per service
-
-Environment-based configs
-
-Docker Compose for local orchestration
-
-Outcome
-
-One command brings the full system up
-
-No manual steps required
-
-📸 Screenshots
-
-[ docker build, docker-compose up outputs ]
-
-🔵 Phase 3 — Kubernetes Core
-
-Goal: Production-grade orchestration
-
-What was done
-
-Kubernetes Deployments & Services
-
-ConfigMaps and Secrets
-
-Namespace isolation
-
-Local → Cloud cluster deployment
-
-Outcome
-
-Services run fully inside Kubernetes
-
-Declarative infrastructure
-
-📸 Screenshots
-
-[ kubectl get pods, services, deployments ]
-
-🔵 Phase 4 — CI/CD & Blue-Green Deployment
-
-Goal: Zero-downtime deployments
-
-What was done
-
-GitHub Actions pipelines
-
-Image build & push on commit
-
-Kubernetes deploy via CI/CD
-
-Blue-Green deployments for all services
-
-Instant rollback via traffic switch
-
-Why Blue-Green matters
-
-No downtime
-
-Safe releases
-
-Fast rollback during incidents
-
-Outcome
-
-One-click deployment
-
-Rollback in seconds
-
-📸 Screenshots
-
+**Screenshots**
 [ GitHub Actions pipeline runs ]
-[ Blue vs Green pods running together ]
+[ Blue and Green pods running together ]
 
+**Video**
 
-🎥 Video (Deployment Walkthrough)
+---
 
-[ Link to video explaining Blue-Green switch & rollback ]
+## 🔵 Phase 5 — Observability
 
-🔵 Phase 5 — Observability
+**Goal:** See failures before users do
 
-Goal: See failures before users do
+**What was done**
+- Prometheus metrics collection
+- Grafana dashboards
+- Metrics validation under load
 
-What was done
+**Outcome**
+- CPU, memory, and pod metrics visible
+- System behavior measurable
 
-Prometheus for metrics collection
-
-Grafana dashboards for visualization
-
-Metrics validation under load
-
-Why this matters
-
-No observability = blind production
-
-Metrics guide scaling and debugging
-
-Outcome
-
-CPU, memory, pod metrics visible
-
-System behavior measurable
-
-📸 Screenshots
-
+**Screenshots**
 [ Grafana dashboards ]
-[ Prometheus targets / metrics ]
+[ Prometheus targets ]
 
 
-🎥 Video (Metrics Explanation)
-
-[ Video explaining dashboards, CPU trends, request behavior ]
-
-🔵 Phase 6 — Backup & Disaster Recovery (Design Decision)
-
-Goal: Data survival & recovery strategy
-
-What was evaluated
-
-Velero for Kubernetes backups
-
-Object-storage-backed restore strategy
-
-Design decision
-
-Workloads are stateless
-
-No databases / PVs in this project
-
-Full DR execution intentionally deferred
-
-Why this is correct
-
-Stateless systems rely on redeploy, not restore
-
-DR design > forced demo
-
-Outcome
-
-DR strategy understood and documented
-
-Clear upgrade path for stateful workloads
-
-📸 Screenshots
-
-[ Velero installation / architecture diagrams (optional) ]
-
-🔵 Phase 7 — Load, Failure & Resilience (Final Proof)
-
-Goal: Prove production readiness
-
-✅ Load Testing
-
-k6 used to generate concurrent traffic
-
-Baseline latency measured
-
-Zero errors under load
-
-📸 Screenshots
-
-[ k6 test output ]
-
-✅ Pod Failure Simulation
-
-Live pods deleted manually
-
-Kubernetes self-healing observed
-
-No service downtime
-
-📸 Screenshots
-
-[ Pod termination & recreation ]
-
-✅ Autoscaling (HPA)
-
-CPU-based HPA configured
-
-Metrics validated
-
-Correct non-scaling behavior explained
-(service not CPU-bound)
-
-Key insight
-
-Autoscaling should happen only when needed, not artificially.
-
-📸 Screenshots
-
-[ HPA status ]
-[ Metrics Server output ]
+**Video**
 
 
-🎥 Video (Resilience & Scaling Explanation)
+---
 
-[ Video explaining load tests, failures, and HPA behavior ]
+## 🔵 Phase 6 — Backup & Disaster Recovery (Design)
 
-🎯 Key Learnings
+**Goal:** Disaster recovery strategy
 
-Zero-downtime deployments are about process, not tools
+**What was evaluated**
+- Velero for Kubernetes backups
+- Object-storage-based restore model
 
-Observability is mandatory, not optional
+**Design Decision**
+- Platform is stateless
+- No databases or persistent volumes
+- Full DR execution intentionally deferred
 
-Autoscaling must be justified by metrics
+**Why**
+- Stateless workloads rely on redeploy, not restore
+- Design clarity is more important than forced demos
 
-Knowing when not to scale is as important as scaling
+**Outcome**
+- DR approach clearly understood and documented
+- Clear upgrade path for future stateful workloads
 
-DevOps is about decisions, not checklists
+**Screenshots**
 
-📈 Why This Project Is Useful
 
-Mirrors real DevOps team workflows
+---
 
-Covers the full lifecycle: build → deploy → observe → recover
+## 🔵 Phase 7 — Load, Failure & Resilience
 
-Demonstrates senior-level reasoning
+### Load Testing
+- k6 used to generate concurrent traffic
+- Latency and error rates measured
+- System remained stable under load
 
-Easy to extend with:
+**Screenshots**
 
-Ingress
+---
 
-Tracing
+### Autoscaling (HPA)
+- CPU-based Horizontal Pod Autoscaler configured
+- Metrics validated
+- Correct non-scaling behavior explained
+  (service was not CPU-bound)
 
-Stateful databases
+**Key Insight**
+> Autoscaling should happen only when resource pressure exists.
 
-Cloud-native DR
+**Screenshots**
 
-🏁 Final Status
+---
 
-✅ Project Complete
-📌 Production-ready DevOps portfolio project
-⭐ Resume strength: High
+### Pod Failure Simulation
+- Live pods deleted manually
+- Kubernetes self-healing observed
+- No service disruption
+
+**Screenshots**
+
+---
+
+## 🎯 Key Learnings
+
+- Zero-downtime is about process, not just tools
+- Observability is mandatory in production
+- Autoscaling must be driven by metrics, not assumptions
+- Knowing **when not to scale** is critical
+- DevOps is decision-making, not tool collection
+
+---
+
+## 🏁 Final Status
+
+✅ Project Complete  
+🚀 Production-oriented DevOps platform  
+⭐ Strong portfolio & resume project
+
