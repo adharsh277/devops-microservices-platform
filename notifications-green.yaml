@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notifications-green
+  namespace: devops
+  labels:
+    app: notifications
+    version: green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notifications
+      version: green
+  template:
+    metadata:
+      labels:
+        app: notifications
+        version: green
+    spec:
+      containers:
+      - name: notifications
+        image: devopsacr30179.azurecr.io/notifications-service:2f0ece8e8fb80e5bab5d08a8f230fa191400ab85
+        ports:
+        - containerPort: 8000
