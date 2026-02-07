@@ -1,0 +1,35 @@
+name: Orders Service CI
+
+on:
+  push:
+    paths:
+      - "phase1/orders-service/**"
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Login to ACR
+        run: |
+          az acr login --name ${{ secrets.ACR_NAME }}
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t ${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }} \
+            ./phase1/orders-service
+
+      - name: Push Docker image
+        run: |
+          docker push ${{ secrets.ACR_LOGIN_SERVER }}/orders-service:${{ github.sha }}
