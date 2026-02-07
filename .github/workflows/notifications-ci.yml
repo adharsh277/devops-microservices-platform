@@ -29,3 +29,17 @@ jobs:
       - name: Push Docker image
         run: |
           docker push devopsacr30179.azurecr.io/notifications-service:${{ github.sha }}
+      # CD RUN
+      - name: Set AKS context
+        uses: azure/aks-set-context@v3
+        with:
+          resource-group: devops-rg
+          cluster-name: devops-aks
+
+      - name: Deploy notifications-service to AKS
+        run: |
+          kubectl set image deployment/notifications-deployment \
+            notifications=${{ secrets.ACR_LOGIN_SERVER }}/notifications-service:${{ github.sha }} \
+            -n devops
+
+          kubectl rollout status deployment/notifications-deployment -n devops
