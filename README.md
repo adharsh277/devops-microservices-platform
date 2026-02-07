@@ -87,11 +87,10 @@ Each service is:
 - All services respond correctly
 - APIs are independently deployable
 
-**Screenshots**
-**Screenshots**
+## Screenshots
 
-**Screenshots**
-![Swager UI Diagram](assets/13.png)
+![Swagger UI Diagram](assets/13.png)
+
 ![API UI Response](assets/14.png)
 
 
@@ -109,11 +108,6 @@ Each service is:
 **Outcome**
 - Full system starts with a single command
 - Zero manual setup steps
-
-**Screenshots**
-[ docker build outputs ]
-[ docker-compose up outputs ]
-
 ---
 
 ## 🔵 Phase 3 — Kubernetes Core
@@ -130,11 +124,11 @@ Each service is:
 - All services run inside Kubernetes
 - Fully declarative cluster setup
 
-**Screenshots**
-[ kubectl get pods ]
-[ kubectl get services ]
-[ kubectl get deployments ]
+## Screenshots
 
+![kubectl get pods](assets/7.png)
+![kubectl deployments](assets/3.png)
+![kubectl get deployments](assets/10.png)
 
 ---
 
@@ -159,10 +153,11 @@ Each service is:
 - Rollback in seconds
 
 **Screenshots**
-[ GitHub Actions pipeline runs ]
-[ Blue and Green pods running together ]
+## Screenshots
 
-**Video**
+![GitHub Actions pipeline runs](assets/9.png)
+
+![Blue and Green pods running together](assets/8.png)
 
 ---
 
@@ -179,13 +174,17 @@ Each service is:
 - CPU, memory, and pod metrics visible
 - System behavior measurable
 
-**Screenshots**
-[ Grafana dashboards ]
-[ Prometheus targets ]
+## Screenshots
+
+![Grafana dashboards](assets/1.png)
+
+![Grafana dashboards](assets/5.png)
+
+![Prometheus metrics](assets/6.png)
 
 
-**Video**
-
+▶️ **GitHub Actions CI Pipeline**  
+[Watch the video](assets/github.mp4)
 
 ---
 
@@ -210,9 +209,6 @@ Each service is:
 - DR approach clearly understood and documented
 - Clear upgrade path for future stateful workloads
 
-**Screenshots**
-
-
 ---
 
 ## 🔵 Phase 7 — Load, Failure & Resilience
@@ -222,7 +218,8 @@ Each service is:
 - Latency and error rates measured
 - System remained stable under load
 
-**Screenshots**
+## Screenshots
+![k6 load testing results](assets/4.png)
 
 ---
 
@@ -234,17 +231,13 @@ Each service is:
 
 **Key Insight**
 > Autoscaling should happen only when resource pressure exists.
-
-**Screenshots**
-
+> 
 ---
 
 ### Pod Failure Simulation
 - Live pods deleted manually
 - Kubernetes self-healing observed
 - No service disruption
-
-**Screenshots**
 
 ---
 
@@ -257,10 +250,9 @@ Each service is:
 - DevOps is decision-making, not tool collection
 
 ---
-
 ## 🏁 Final Status
 
 ✅ Project Complete  
 🚀 Production-oriented DevOps platform  
-⭐ Strong portfolio & resume project
 
+**Author:** Adharsh U
