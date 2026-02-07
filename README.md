@@ -91,20 +91,8 @@ Each service is:
 **Screenshots**
 
 **Screenshots**
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="assets/13.png" width="2500"><br>
-      <em>Sample API response</em>
-    </td>
-    <td align="center">
-      <img src="assets/14.png" width="2500"><br>
-      <em> Swagger UI – API documentation</em>
-    </td>
-  </tr>
-</table>
-
+![Swager UI Diagram](assets/13.png)
+![API UI Response](assets/14.png)
 
 
 ---
