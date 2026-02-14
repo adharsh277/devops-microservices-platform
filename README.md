@@ -1,4 +1,4 @@
-# 🚀 DevOps Microservices Platform  
+#  DevOps Microservices Platform  
 **End-to-End DevOps | Kubernetes | CI/CD | Blue-Green | Observability | Resilience**
 ---
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?logo=fastapi)
